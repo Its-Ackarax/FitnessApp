@@ -1,28 +1,25 @@
 
 public class DailyCalorieCalc 
 {
-	double userWeight = 0.0;
-	int userHeight = 0;
-	String userGender = "";
-	int userAge = 0;
+	User user = User.getInstance();
 	
-	private int BMRCalc()
+	public int getBMR()
 	{
 		
 		int basalMetabolicRate;
 		
-		if (userGender == "M")
+		if (user.getGender() == "M")
 		{
-			basalMetabolicRate = (int) Math.round(10 * userWeight + 6.25 * userHeight - 5 * userAge + 5);
+			basalMetabolicRate = (int) Math.round((10 * user.getWeightInKG()) + (6.25 * user.getHeightInCM()) - (5 * user.getAge() + 5));
 		}
-		else if (userGender == "F");
+		else if (user.getGender() == "F");
 		{
-			basalMetabolicRate = (int) Math.round(10 * userWeight + 6.25 * userHeight - 5 * userAge - 161);
+			basalMetabolicRate = (int) Math.round(10 * user.getWeightInKG() + 6.25 * user.getHeightInCM() - 5 * user.getAge() - 161);
 		}
 		return basalMetabolicRate;
 	}
 	
-	private double getActivityLevelNumber(int userActivityLevel)
+	public double getActivityLevelNumber(int userActivityLevel)
 	{
 		double activityLevelNumber = 0;
 		
@@ -66,10 +63,11 @@ public class DailyCalorieCalc
  
 		return activityLevelNumber;
 	}
-	private double MaintenanceCalc(int bmr, double userActivityLevel)
+	
+	public void getMaintenanceCalc()
 	{
 		
-		double maintenenceResult = bmr * userActivityLevel;
-		return maintenenceResult;
+		double maintenenceResult = getBMR() * getActivityLevelNumber(user.getActivityLevel());
+		System.out.println(maintenenceResult);
 	}
 }

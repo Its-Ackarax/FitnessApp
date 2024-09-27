@@ -2,16 +2,16 @@ import java.io.DataInputStream;
 
 public class InformationGather 
 {
-
+	
 	DataInputStream in = new DataInputStream(System.in);
 
 	int userAge = 0;
 	String userGender = "";
 	int userHeightInCM = 0;
 	double userWeightInKG = 0.0;
-	String userActivityLevel = "";
+	int userActivityLevel = 0;
 	
-	private void InfoGather()
+	public void InfoGather()
 	{
 		
 		try
@@ -38,13 +38,12 @@ public class InformationGather
 			System.out.println("Enter '5' if 'Extreamely Active'.");
 			System.out.println("Enter your number now:");
 
-			userActivityLevel = in.readLine();	
+			userActivityLevel = Integer.parseInt(in.readLine());	
 
 		}
 		catch(Exception e)
 		{
 			
 		}
-	
 	}
 }

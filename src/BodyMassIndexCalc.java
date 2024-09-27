@@ -2,30 +2,27 @@ import java.io.DataInputStream;
 	
 public class BodyMassIndexCalc 
 {
+	User user = User.getInstance();
+	
+	
 	DataInputStream in = new DataInputStream(System.in);
 	//Scanner s = new Scanner(System.in);
 	
 	double resultBMI = 0.0;
-	double userWeight= 0.0;
 	
-	double userHeight = 0.0;
+	double userHeightConverted = 0.0;
 	double heightSquared = 0.0;
 	
 	String resultPara = "According to the 'World Health Organisation', you fall into their classification of ";
 	
-	public void BMICalc()
+	public void BMICalc()//(double userWeight, int userHeight)
 	{
 		try
 		{
-			System.out.println("Please enter your weight in 'KG's:");
-			userWeight = Double.parseDouble(in.readLine());
+			userHeightConverted = (double)user.getHeightInCM() / 100;
+			heightSquared = userHeightConverted * userHeightConverted;
 			
-			System.out.println("Please enter your height in 'Meter's:");
-			userHeight = Double.parseDouble(in.readLine());
-			userHeight = userHeight / 100;
-			heightSquared = userHeight * userHeight;
-			
-			resultBMI = userWeight / heightSquared;
+			resultBMI = user.getWeightInKG() / heightSquared;
 			
 			if (resultBMI > 40.0)
 			{
