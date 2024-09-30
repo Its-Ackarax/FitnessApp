@@ -3,6 +3,8 @@ public class DailyCalorieCalc
 {
 	User user = User.getInstance();
 	
+	//******************************************************************************************
+
 	public int getBMR()
 	{
 		
@@ -19,6 +21,8 @@ public class DailyCalorieCalc
 		return basalMetabolicRate;
 	}
 	
+	//******************************************************************************************
+	
 	public double getActivityLevelNumber(int userActivityLevel)
 	{
 		double activityLevelNumber = 0;
@@ -27,36 +31,36 @@ public class DailyCalorieCalc
 		{
 			case 1:
 				//Not Active
-				activityLevelNumber = 1.55;
+				activityLevelNumber = 1.150;
 			break;
 			
 			case 2:
 				//Slightly Active
-				activityLevelNumber = 1.70;
+				activityLevelNumber = 1.30;
 				
 			break;
 			
 			case 3:
 				//Moderately Active
-				activityLevelNumber = 1.85;
+				activityLevelNumber = 1.50;
 				
 			break;
 			
 			case 4:
-				//Very Active
-				activityLevelNumber = 2.025;
+				//Vigorously Active
+				activityLevelNumber = 1.65;
 				
 			break;
 			
 			case 5:
-				// Vigorously Active
-				activityLevelNumber = 2.2;
+				//Extremely Active
+				activityLevelNumber = 1.85;
 				
 			break;
 			
 			case 6:
-				//Extremely Active
-				activityLevelNumber = 2.4;
+				//Insanely Active
+				activityLevelNumber = 2.1;
 				
 			break;
 		}
@@ -64,10 +68,15 @@ public class DailyCalorieCalc
 		return activityLevelNumber;
 	}
 	
+	//******************************************************************************************
+	
 	public void getMaintenanceCalc()
 	{
 		
 		double maintenenceResult = getBMR() * getActivityLevelNumber(user.getActivityLevel());
 		System.out.println(maintenenceResult);
 	}
+	
+	//******************************************************************************************
+
 }

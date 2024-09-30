@@ -10,10 +10,11 @@ public class InformationGather
 	int userHeightInCM = 0;
 	double userWeightInKG = 0.0;
 	int userActivityLevel = 0;
-	
 	public void InfoGather()
 	{
 		
+		//******************************************************************************************
+
 		try
 		{
 			System.out.println("Before we begin I need to gather some information from you.");
@@ -35,10 +36,10 @@ public class InformationGather
 			System.out.println("Enter '3' if 'Moderately Active'.");
 			System.out.println("Enter '4' if 'Very Active'.");
 			System.out.println("Enter '5' if 'Vigorously Active'.");
-			System.out.println("Enter '5' if 'Extreamely Active'.");
+			System.out.println("Enter '6' if 'Extreamely Active'.");
 			System.out.println("Enter your number now:");
 
-			userActivityLevel = Integer.parseInt(in.readLine());	
+			userActivityLevel = Integer.parseInt(in.readLine());
 
 		}
 		catch(Exception e)

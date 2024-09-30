@@ -6,6 +6,7 @@ public class BodyMassIndexCalc
 	
 	
 	DataInputStream in = new DataInputStream(System.in);
+	
 	//Scanner s = new Scanner(System.in);
 	
 	double resultBMI = 0.0;
@@ -14,9 +15,14 @@ public class BodyMassIndexCalc
 	double heightSquared = 0.0;
 	
 	String resultPara = "According to the 'World Health Organisation', you fall into their classification of ";
+	String menuReturn = "";
+
 	
 	public void BMICalc()//(double userWeight, int userHeight)
 	{
+		
+		//******************************************************************************************
+		
 		try
 		{
 			userHeightConverted = (double)user.getHeightInCM() / 100;
@@ -58,6 +64,12 @@ public class BodyMassIndexCalc
 			}
 			
 			System.out.println(resultPara + "as your BMI is " + resultBMI + ".");
+			
+			//******************************************************************************************
+			
+			System.out.println("Enter anything to return to the menu.");
+			menuReturn = in.readLine();
+
 		}
 		catch(Exception e)
 		{
