@@ -4,6 +4,7 @@ public class DailyCalorieCalc
 	User user = User.getInstance();
 	
 	//******************************************************************************************
+	//Using user info to calculate the user's BMR (Basal Metabolic Rate)
 
 	public int getBMR()
 	{
@@ -22,7 +23,8 @@ public class DailyCalorieCalc
 	}
 	
 	//******************************************************************************************
-	
+	//Using user info to calculate the user's activity level number thats used for getting daily maintenance calories
+
 	public double getActivityLevelNumber(int userActivityLevel)
 	{
 		double activityLevelNumber = 0;
@@ -69,7 +71,8 @@ public class DailyCalorieCalc
 	}
 	
 	//******************************************************************************************
-	
+	//Using user info to calculate the estimate for the user's daily calorie maintenance count
+
 	public void getMaintenanceCalc()
 	{
 		

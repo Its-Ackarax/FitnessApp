@@ -1,11 +1,13 @@
 public class FitnessAppExceptions extends Exception
 {
-    // Parameterless Constructor
-    public FitnessAppExceptions() {}
-
-    // Constructor that accepts a message
-    public FitnessAppExceptions(String message)
+	//Created a custom exception to print a custom message for the user inputs breaking the menu
+    public FitnessAppExceptions() 
     {
-       super(message);
+    	super("You must enter one of the numbers specified in the menu.");
+    }
+
+    public FitnessAppExceptions(String userInput)
+    {
+       super("You entered " + userInput + " which is not one of the numbers specified in the menu. Please try again.");
     }
 }

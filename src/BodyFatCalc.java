@@ -1,4 +1,5 @@
 
-public class BodyFatCalc {
+public class BodyFatCalc 
+{
 
 }

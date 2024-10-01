@@ -10,7 +10,21 @@ public class User
 	static double weightInKG;
 	static int activityLevel;
 	
+	static int userDailyProteinLower;
+	static int userDailyProteinUpper;
+	
+	static double userBMI = 0;
+	static int userBMR = 0;
+	static double userMaintenenceCalorieCount = 0;
+
+	
+	static int userNeckWidth = 0;
+	static int userWaistWidth = 0;
+	static double userBodyFat = 0;
+	
+	//******************************************************************************************
 	// Constructor Declaration of Class
+	
 	public User(int Age, String gender, int heightInCM, double weightInKG,int activityLevel)
 	{
 		this.age = age;
@@ -20,6 +34,9 @@ public class User
 		this.activityLevel = activityLevel;
 	}
 
+	//******************************************************************************************
+	//Establishing getter methods for the user's initial information.
+	
 	public static User getInstance()
 	{
 		if (instance == null) 
@@ -29,33 +46,106 @@ public class User
         return instance;	
     }
 	
-	// method 1
+	//Age
 	public static int getAge() 
 	{ 
 		return age; 
 	}
 	
-    // method 2
+    //Gender
 	public static String getGender() 
 	{ 
 		return gender; 
 	}
 
-    // method 3
+    //Height
 	public static int getHeightInCM() 
 	{ 
 		return heightInCM; 
 	}
 
-    // method 4
+    //Weight
 	public static double getWeightInKG() 
 	{ 
 		return weightInKG; 
 	}
 	
-	//method 5
+	//ActivityLevel
 	public static int getActivityLevel() 
 	{ 
 		return activityLevel; 
+	}
+	
+	//******************************************************************************************
+	//Getters and Setters for the new and calculated user information
+	
+	
+	//BMI
+	public static double getUserBMI()
+	{
+		return userBMI;
+	}
+	
+	public static void setUserBMI(double calculatedBMI)
+	{
+		userBMI = calculatedBMI;
+	}
+	
+	
+	//BMR
+	public static double getUserBMR()
+	{
+		return userBMR;
+	}
+	
+	public static void setUserBMR(double calculatedBMR)
+	{
+		userBMI = calculatedBMR;
+	}
+	
+	
+	//MaintenanceCalories
+	public static double getMaintenenceCalorieCount()
+	{
+		return userBMI;
+	}
+	
+	public static void setMaintenenceCalorieCount(double calculatedMaintenenceCalorieCount)
+	{
+		userBMI = calculatedMaintenenceCalorieCount;
+	}
+	
+	
+	//BodyFat
+	public static double getUserBodyFat()
+	{
+		return userBodyFat;
+	}
+	
+	public static void setUserBodyFat(double calculatedBodyFat)
+	{
+		userBodyFat = calculatedBodyFat;
+	}
+	
+	//NeckWidth
+	public static int getUserNeckWidth()
+	{
+		return userNeckWidth;
+	}
+	
+	public static void setUserNeckWidth(int calculatedNeckWidth)
+	{
+		userNeckWidth = calculatedNeckWidth;
+	}
+	
+	//WaistWidth
+	public static int getUserWaistWidth()
+	{
+		return userWaistWidth;
+	}
+	
+	public static void setUserWaistWidth(int calculatedWaistWidth)
+	{
+		userWaistWidth = calculatedWaistWidth;
 	}
 }

@@ -3,6 +3,7 @@ public class DailyProteinIntakeCalc
 	User user = User.getInstance();
 	
 	//******************************************************************************************
+	//Using user info to calculate the estimated range for how much protein the user should intake daily.
 
 	public void getDailyProteinIntake()
 	{

@@ -4,13 +4,9 @@ public class BodyMassIndexCalc
 {
 	User user = User.getInstance();
 	
-	
 	DataInputStream in = new DataInputStream(System.in);
-	
-	//Scanner s = new Scanner(System.in);
-	
+
 	double resultBMI = 0.0;
-	
 	double userHeightConverted = 0.0;
 	double heightSquared = 0.0;
 	
@@ -18,11 +14,11 @@ public class BodyMassIndexCalc
 	String menuReturn = "";
 
 	
-	public void BMICalc()//(double userWeight, int userHeight)
+	public void BMICalc()
 	{
 		
 		//******************************************************************************************
-		
+		//Using user info to calculate the user's BMI
 		try
 		{
 			userHeightConverted = (double)user.getHeightInCM() / 100;
@@ -75,6 +71,6 @@ public class BodyMassIndexCalc
 		{
 			
 		}
+		
 	}
-	
 }
