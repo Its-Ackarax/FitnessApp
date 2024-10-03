@@ -25,46 +25,7 @@ public class BodyMassIndexCalc
 			heightSquared = userHeightConverted * userHeightConverted;
 			
 			resultBMI = user.getWeightInKG() / heightSquared;
-			
-			if (resultBMI > 40.0)
-			{
-				resultPara = resultPara + "'Obese Class III' ";	
-			}
-			else if (resultBMI > 35.0)
-			{
-				resultPara = resultPara +  "'Obese Class II' ";	
-			}
-			else if (resultBMI > 30.0)
-			{
-				resultPara = resultPara +  "'Obese Class I' ";	
-			}
-			else if (resultBMI > 25.0)
-			{
-				resultPara = resultPara +  "'Overweight' ";	
-			}
-			else if (resultBMI > 18.5)
-			{
-				resultPara = resultPara +  "'Normal' ";	
-			}
-			else if (resultBMI > 17.0)
-			{
-				resultPara = resultPara +  "'Mild Thinness' ";	
-			}
-			else if (resultBMI > 16.0)
-			{
-				resultPara = resultPara +  "'Moderate Thinness' ";	
-			}
-			else
-			{
-				resultPara = resultPara +  "'Severe Thinness' ";	
-			}
-			
-			System.out.println(resultPara + "as your BMI is " + resultBMI + ".");
-			
-			//******************************************************************************************
-			
-			System.out.println("Enter anything to return to the menu.");
-			menuReturn = in.readLine();
+			user.setUserBMI(resultBMI);
 
 		}
 		catch(Exception e)
@@ -72,5 +33,46 @@ public class BodyMassIndexCalc
 			
 		}
 		
+	}
+	
+	public void displayBMI()
+	{
+		if (resultBMI > 40.0)
+		{
+			resultPara = resultPara + "'Obese Class III' ";	
+		}
+		else if (resultBMI > 35.0)
+		{
+			resultPara = resultPara +  "'Obese Class II' ";	
+		}
+		else if (resultBMI > 30.0)
+		{
+			resultPara = resultPara +  "'Obese Class I' ";	
+		}
+		else if (resultBMI > 25.0)
+		{
+			resultPara = resultPara +  "'Overweight' ";	
+		}
+		else if (resultBMI > 18.5)
+		{
+			resultPara = resultPara +  "'Normal' ";	
+		}
+		else if (resultBMI > 17.0)
+		{
+			resultPara = resultPara +  "'Mild Thinness' ";	
+		}
+		else if (resultBMI > 16.0)
+		{
+			resultPara = resultPara +  "'Moderate Thinness' ";	
+		}
+		else
+		{
+			resultPara = resultPara +  "'Severe Thinness' ";	
+		}
+					
+		System.out.println(resultPara + "as your BMI is " + resultBMI + ".");
+		
+		//******************************************************************************************
+
 	}
 }

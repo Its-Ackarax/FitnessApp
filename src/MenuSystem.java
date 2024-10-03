@@ -6,8 +6,6 @@ public class MenuSystem
 	//***********************************************************
 
 	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	
-	InformationGather info = new InformationGather();
 	BodyMassIndexCalc bmi = new BodyMassIndexCalc();
 	DailyCalorieCalc calories = new DailyCalorieCalc();
 	DailyProteinIntakeCalc protein = new DailyProteinIntakeCalc();
@@ -31,7 +29,7 @@ public class MenuSystem
 			while(true)
 			{
 		        System.out.println("Fitness Calculator Main Menu\n");
-		        System.out.print("1.) Enter your information \n");
+		        System.out.print("1.) Update/Change your information \n");
 		        System.out.print("2.) Body Mass Index (BMI) Calculator.\n");
 		        System.out.print("3.) Daily Calorie Calculator.\n");
 		        System.out.print("4.) Daily Protein Intake Calculator.\n");
@@ -61,9 +59,6 @@ public class MenuSystem
 			    
 				    case 1:
 				        //User enters their information
-						info.InfoGather();
-						User user = new User(info.userAge, info.userGender, info.userHeightInCM, info.userWeightInKG, info.userActivityLevel);
-						
 						System.out.println("Enter anything to return to the menu.");
 						menuReturn = in.readLine();
 						
@@ -74,7 +69,7 @@ public class MenuSystem
 				    case 2: 
 				    	//Body Mass Index Calculator
 				    	bmi.BMICalc();
-				    	
+				    	bmi.displayBMI();
 						System.out.println("Enter anything to return to the menu.");
 						menuReturn = in.readLine();
 						

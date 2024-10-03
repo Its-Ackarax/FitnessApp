@@ -1,7 +1,7 @@
 
 public class DailyCalorieCalc 
 {
-	User user = User.getInstance();
+	User user = User.getInstance();	
 	
 	//******************************************************************************************
 	//Using user info to calculate the user's BMR (Basal Metabolic Rate)
@@ -9,16 +9,25 @@ public class DailyCalorieCalc
 	public int getBMR()
 	{
 		
-		int basalMetabolicRate;
+		int basalMetabolicRate = 0;
 		
-		if (user.getGender() == "M")
+		try 
 		{
-			basalMetabolicRate = (int) Math.round((10 * user.getWeightInKG()) + (6.25 * user.getHeightInCM()) - (5 * user.getAge() + 5));
+			if (user.getGender() == "M")
+			{
+				basalMetabolicRate = (int) Math.round((10 * user.getWeightInKG()) + (6.25 * user.getHeightInCM()) - (5 * user.getAge() + 5));
+			}
+			else if (user.getGender() == "F");
+			{
+				basalMetabolicRate = (int) Math.round((10 * user.getWeightInKG() + 6.25 * user.getHeightInCM()) - 5 * user.getAge() - 161);
+			}
 		}
-		else if (user.getGender() == "F");
+		catch(Exception e)
 		{
-			basalMetabolicRate = (int) Math.round(10 * user.getWeightInKG() + 6.25 * user.getHeightInCM() - 5 * user.getAge() - 161);
+			
 		}
+		
+		user.setUserBMR(basalMetabolicRate);
 		return basalMetabolicRate;
 	}
 	
@@ -75,9 +84,18 @@ public class DailyCalorieCalc
 
 	public void getMaintenanceCalc()
 	{
+		double maintenenceResult = 0.0;
 		
-		double maintenenceResult = getBMR() * getActivityLevelNumber(user.getActivityLevel());
-		System.out.println(maintenenceResult);
+		try
+		{
+			maintenenceResult = getBMR() * getActivityLevelNumber(user.getActivityLevel());
+			System.out.println(maintenenceResult);
+		}
+		catch(Exception e)
+		{
+			
+		}
+		user.setMaintenenceCalorieCount(maintenenceResult);
 	}
 	
 	//******************************************************************************************

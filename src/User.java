@@ -16,16 +16,16 @@ public class User
 	static double userBMI = 0;
 	static int userBMR = 0;
 	static double userMaintenenceCalorieCount = 0;
-
-	
+	static double userBodyFat = 0;
+	/*
 	static int userNeckWidth = 0;
 	static int userWaistWidth = 0;
-	static double userBodyFat = 0;
+	*/
 	
 	//******************************************************************************************
 	// Constructor Declaration of Class
 	
-	public User(int Age, String gender, int heightInCM, double weightInKG,int activityLevel)
+	public User(int age, String gender, int heightInCM, double weightInKG,int activityLevel)
 	{
 		this.age = age;
 		this.gender = gender;
@@ -127,6 +127,7 @@ public class User
 		userBodyFat = calculatedBodyFat;
 	}
 	
+	/*
 	//NeckWidth
 	public static int getUserNeckWidth()
 	{
@@ -148,4 +149,5 @@ public class User
 	{
 		userWaistWidth = calculatedWaistWidth;
 	}
+	*/
 }
