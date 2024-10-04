@@ -18,19 +18,19 @@ public class InformationGather
 		try
 		{
 			System.out.println("Before we begin I need to gather some information from you.");
-			System.out.println("Please enter your age:");
+			System.out.println("Please enter your 'Age':");
 			userAge = Integer.parseInt(in.readLine());
 			
-			System.out.println("Please enter your gender. 'M' for Male 'F' for Female:");
+			System.out.println("Please enter your 'Gender'. 'M' for Male 'F' for Female:");
 			userGender = in.readLine();
 			
-			System.out.println("Please enter your height in 'Centimeters:");
+			System.out.println("Please enter your 'Height' in 'Centimeters:");
 			userHeightInCM = Integer.parseInt(in.readLine());
 			
-			System.out.println("Please enter your weight in 'KG's:");
+			System.out.println("Please enter your 'Weight' in 'KG's:");
 			userWeightInKG = Double.parseDouble(in.readLine());
 			
-			System.out.println("Please enter the number that best corresponds to your activity level:");
+			System.out.println("Please enter the number that best corresponds to your 'Activity Level':");
 			System.out.println("Enter '1' if 'Not Active'.");
 			System.out.println("Enter '2' if 'Slightly Active'.");
 			System.out.println("Enter '3' if 'Moderately Active'.");

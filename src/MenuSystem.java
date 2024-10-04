@@ -6,6 +6,7 @@ public class MenuSystem
 	//***********************************************************
 
 	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	UpdateUserInfo update = new UpdateUserInfo();
 	BodyMassIndexCalc bmi = new BodyMassIndexCalc();
 	DailyCalorieCalc calories = new DailyCalorieCalc();
 	DailyProteinIntakeCalc protein = new DailyProteinIntakeCalc();
@@ -29,12 +30,14 @@ public class MenuSystem
 			while(true)
 			{
 		        System.out.println("Fitness Calculator Main Menu\n");
-		        System.out.print("1.) Update/Change your information \n");
-		        System.out.print("2.) Body Mass Index (BMI) Calculator.\n");
-		        System.out.print("3.) Daily Calorie Calculator.\n");
-		        System.out.print("4.) Daily Protein Intake Calculator.\n");
-		        System.out.print("5.) Body Fat Calculator.\n");
-		        System.out.print("6.) Exit\n");
+		        
+		        System.out.print("1.) View Your Current Information \n");
+		        System.out.print("2.) Update/Change Your Information \n");
+		        System.out.print("3.) Body Mass Index (BMI) Calculator.\n");
+		        System.out.print("4.) Daily Calorie Calculator.\n");
+		        System.out.print("5.) Daily Protein Intake Calculator.\n");
+		        System.out.print("6.) Body Fat Calculator.\n");
+		        System.out.print("7.) Exit\n");
 		        System.out.print("\nEnter Your Menu Choice: ");
 
 		        userChoiceInput = in.readLine();
@@ -57,8 +60,27 @@ public class MenuSystem
 			    switch(choice)
 			    {
 			    
-				    case 1:
+			    
+			    	case 1:
+			    		//Shows user information
+			    		System.out.println("Information you entered is...");
+			    		System.out.println("Age: " + User.getAge());
+			    		System.out.println("Gender: " + User.getGender());
+			    		System.out.println("Height: " + User.getHeightInCM());
+			    		System.out.println("Weight: " + User.getWeightInKG());
+			    		System.out.println("Fitness Levels: " + User.getActivityLevel());
+
+						System.out.println("Enter anything to return to the menu.");
+			    		menuReturn = in.readLine();
+					
+			        break;
+
+					//******************************************************************************************
+
+				    case 2:
 				        //User enters their information
+				    	update.UpdateInfo();
+				    	
 						System.out.println("Enter anything to return to the menu.");
 						menuReturn = in.readLine();
 						
@@ -66,10 +88,11 @@ public class MenuSystem
 	
 						//******************************************************************************************
 
-				    case 2: 
+				    case 3: 
 				    	//Body Mass Index Calculator
 				    	bmi.BMICalc();
 				    	bmi.displayBMI();
+				    	
 						System.out.println("Enter anything to return to the menu.");
 						menuReturn = in.readLine();
 						
@@ -77,7 +100,7 @@ public class MenuSystem
 	
 						//******************************************************************************************
 
-				    case 3:
+				    case 4:
 				    	//Daily Calorie Calculator
 						calories.getMaintenanceCalc();
 	
@@ -88,7 +111,7 @@ public class MenuSystem
 	
 						//******************************************************************************************
 
-				    case 4: 
+				    case 5: 
 				        //Daily Protein Intake Calculator
 				    	protein.getDailyProteinIntake();
 				    					    	
@@ -98,7 +121,7 @@ public class MenuSystem
 	
 						//******************************************************************************************
 
-				    case 5:
+				    case 6:
 				        //Body Fat Calculator
 				    	fat.getBodyFat();
 				    					    	
@@ -109,7 +132,7 @@ public class MenuSystem
 	
 						//******************************************************************************************
 
-				    case 6: 
+				    case 7: 
 				        System.out.println("Exiting Program...");
 				        System.exit(0);
 				         break;

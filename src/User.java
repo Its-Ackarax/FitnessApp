@@ -52,28 +52,57 @@ public class User
 		return age; 
 	}
 	
+	public static void setAge(int updatedAge)
+	{
+		age = updatedAge;
+	}
+	
+	
     //Gender
 	public static String getGender() 
 	{ 
 		return gender; 
 	}
+	
+	public static void setGender(String updatedGender)
+	{
+		gender = updatedGender;
+	}
 
+	
     //Height
 	public static int getHeightInCM() 
 	{ 
 		return heightInCM; 
 	}
+	
+	public static void setHeightInCM(int updatedHeight)
+	{
+		heightInCM = updatedHeight;
+	}
 
+	
     //Weight
 	public static double getWeightInKG() 
 	{ 
 		return weightInKG; 
 	}
 	
+	public static void setWeightInKG(double updatedWeight)
+	{
+		weightInKG = updatedWeight;
+	}
+	
+	
 	//ActivityLevel
 	public static int getActivityLevel() 
 	{ 
 		return activityLevel; 
+	}
+	
+	public static void setActivityLevel(int updatedActivityLevel)
+	{
+		activityLevel = updatedActivityLevel;
 	}
 	
 	//******************************************************************************************
@@ -126,28 +155,4 @@ public class User
 	{
 		userBodyFat = calculatedBodyFat;
 	}
-	
-	/*
-	//NeckWidth
-	public static int getUserNeckWidth()
-	{
-		return userNeckWidth;
-	}
-	
-	public static void setUserNeckWidth(int calculatedNeckWidth)
-	{
-		userNeckWidth = calculatedNeckWidth;
-	}
-	
-	//WaistWidth
-	public static int getUserWaistWidth()
-	{
-		return userWaistWidth;
-	}
-	
-	public static void setUserWaistWidth(int calculatedWaistWidth)
-	{
-		userWaistWidth = calculatedWaistWidth;
-	}
-	*/
 }
