@@ -28,7 +28,7 @@ public class MenuSystem
 		{
 			//Menu Loop
 			while(true)
-			{
+			{				
 		        System.out.println("Fitness Calculator Main Menu\n");
 		        
 		        System.out.print("1.) View Your Current Information \n");
@@ -79,10 +79,7 @@ public class MenuSystem
 
 				    case 2:
 				        //User enters their information
-				    	update.UpdateInfo();
-				    	
-						System.out.println("Enter anything to return to the menu.");
-						menuReturn = in.readLine();
+				    	update.UpdateInfoMenu();
 						
 				        break;
 	
@@ -102,10 +99,7 @@ public class MenuSystem
 
 				    case 4:
 				    	//Daily Calorie Calculator
-						calories.getMaintenanceCalc();
-	
-						System.out.println("Enter anything to return to the menu.");
-						menuReturn = in.readLine();
+						calories.dailyCaloriesMenu();
 	
 				        break;
 	

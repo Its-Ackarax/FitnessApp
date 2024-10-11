@@ -22,7 +22,9 @@ public class UpdateUserInfo
 	double updatedWeight;
 	int updatedActivityLevel;
 	
-	public void UpdateInfo()
+	Boolean menuExit = false;
+	
+	public void UpdateInfoMenu()
 	{
 		
 		
@@ -31,7 +33,7 @@ public class UpdateUserInfo
 		try
 		{
 			//Menu Loop
-			while(true)
+			while(menuExit == false)
 			{
 		        System.out.println("Updating Information Menu.\n");
 		        System.out.print("1.) Age. \n");
@@ -144,6 +146,7 @@ public class UpdateUserInfo
 
 				    case 6: 
 				        System.out.println("Returning to main menu...");
+				        menuExit = true;
 				         break;
 				         
 				    default :
@@ -160,7 +163,7 @@ public class UpdateUserInfo
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			UpdateInfo();
+			UpdateInfoMenu();
 		} 
 		
 	}
